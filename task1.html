@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gave task</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        height: 100vh;
+        width: 100vw;
+        background-color: blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .sub-container{
+        height: 35vh;
+        width: 35vw;
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .btn{
+        border-radius: 5rem;
+        color: red;
+    }
+    
+</style>
+<body>
+    <form  onsubmit="return fixed()" action="task2.html">
+   
+    <div class="container">
+        <div class="sub-container">
+    <input id="fillname" value="">
+    <button id="btn">Submit</button>
+    </div>
+    </div>
+</form>
+
+    <script>
+      
+      function fixed() {
+    let condition = document.getElementById("fillname").value;
+
+    // Check if the value is empty or if it's a number
+    if (condition === "" || !isNaN(condition)||condition.length > 10) {
+        alert("Please enter a valid string (not a number).");
+        return false;
+    }
+    // Check if the length is greater than 10
+    // else if (condition.length > 10) {
+    //     alert("Please enter a string with a length of 10 characters or less.");
+    //     return false;
+    // }
+    else {
+        sessionStorage.setItem("fillname", condition);
+        return true;
+    }
+}
+
+    //    fixed();
+    </script>
+
+    
+</body>
+</html>
